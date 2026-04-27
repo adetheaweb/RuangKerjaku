@@ -87,8 +87,8 @@ export const LinkManager = ({
             <div className="p-8 border-b border-white/5 bg-indigo-900/40">
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <h2 className="text-2xl font-black uppercase italic text-white tracking-widest leading-none">Management Center</h2>
-                  <p className="text-[10px] text-indigo-400 font-black uppercase tracking-[0.3em] mt-2">Personalize Workspace</p>
+                  <h2 className="text-2xl font-black uppercase italic text-white tracking-widest leading-none">Pusat Manajemen</h2>
+                  <p className="text-[10px] text-indigo-400 font-black uppercase tracking-[0.3em] mt-2">Personalisasi Ruang Kerja</p>
                 </div>
                 <button onClick={onClose} className="p-2 hover:bg-white/10 text-indigo-300 rounded-full transition-colors">
                   <X size={24} />
@@ -103,7 +103,7 @@ export const LinkManager = ({
                     activeTab === 'links' ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20' : 'text-indigo-400 hover:text-indigo-200'
                   }`}
                 >
-                  <LinkIconLucide size={14} /> My Links
+                  <LinkIconLucide size={14} /> Link Saya
                 </button>
                 <button 
                   onClick={() => setActiveTab('header')}
@@ -119,7 +119,7 @@ export const LinkManager = ({
                     activeTab === 'appearance' ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20' : 'text-indigo-400 hover:text-indigo-200'
                   }`}
                 >
-                  <Palette size={14} /> Theme
+                  <Palette size={14} /> Tampilan
                 </button>
               </div>
             </div>
@@ -129,7 +129,7 @@ export const LinkManager = ({
                 <>
                   <section>
                     <h3 className="text-[10px] font-black text-indigo-300 uppercase tracking-[0.2em] mb-6 flex items-center gap-3">
-                      <Plus size={14} className="text-pink-500" /> New Integration
+                      <Plus size={14} className="text-pink-500" /> Integrasi Baru
                     </h3>
                     <form onSubmit={handleLinkSubmit} className="space-y-5 bg-white/5 p-6 rounded-3xl border border-white/5">
                       <div className="space-y-1">
@@ -138,23 +138,23 @@ export const LinkManager = ({
                           type="text"
                           value={newTitle}
                           onChange={(e) => setNewTitle(e.target.value)}
-                          placeholder="e.g., Creative Hub"
+                          placeholder="misal: Creative Hub"
                           className="w-full px-5 py-3 bg-indigo-900/50 border border-white/10 rounded-2xl focus:border-pink-500/50 outline-none transition-all placeholder:text-indigo-400/30 text-white"
                         />
                       </div>
                       <div className="space-y-1">
-                        <label className="block text-[9px] font-black text-indigo-400 uppercase tracking-widest ml-1">Destination URL</label>
+                        <label className="block text-[9px] font-black text-indigo-400 uppercase tracking-widest ml-1">URL Tujuan</label>
                         <input
                           type="text"
                           value={newUrl}
                           onChange={(e) => setNewUrl(e.target.value)}
-                          placeholder="e.g., app.io"
+                          placeholder="misal: app.io"
                           className="w-full px-5 py-3 bg-indigo-900/50 border border-white/10 rounded-2xl focus:border-pink-500/50 outline-none transition-all placeholder:text-indigo-400/30 text-white"
                         />
                       </div>
                       <div className="flex gap-4">
                         <div className="flex-1 space-y-1">
-                          <label className="block text-[9px] font-black text-indigo-400 uppercase tracking-widest ml-1">Symbol</label>
+                          <label className="block text-[9px] font-black text-indigo-400 uppercase tracking-widest ml-1">Simbol</label>
                           <select 
                             value={newIcon} 
                             onChange={(e) => setNewIcon(e.target.value)}
@@ -175,14 +175,14 @@ export const LinkManager = ({
                         </div>
                       </div>
                       <button type="submit" className="w-full py-4 bg-pink-600 text-white rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-pink-500 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg shadow-pink-600/20">
-                        Register link
+                        Daftarkan Link
                       </button>
                     </form>
                   </section>
 
                   <section>
                     <h3 className="text-[10px] font-black text-indigo-300 uppercase tracking-[0.2em] mb-6">
-                      System Modules ({links.length})
+                      Modul Sistem ({links.length})
                     </h3>
                     <div className="space-y-4">
                       {links.map((link) => (
@@ -209,7 +209,7 @@ export const LinkManager = ({
                 <>
                   <section>
                     <h3 className="text-[10px] font-black text-indigo-300 uppercase tracking-[0.2em] mb-6 flex items-center gap-3">
-                      <ImageIcon size={14} className="text-pink-500" /> New Header Module
+                      <ImageIcon size={14} className="text-pink-500" /> Modul Header Baru
                     </h3>
                     <form onSubmit={handleSlideSubmit} className="space-y-5 bg-white/5 p-6 rounded-3xl border border-white/5">
                       <div className="space-y-4">
@@ -224,7 +224,7 @@ export const LinkManager = ({
                           ) : (
                             <>
                               <Upload className="text-indigo-400 mb-2" />
-                              <span className="text-[9px] font-black text-indigo-400 uppercase tracking-widest">Select Header Image</span>
+                              <span className="text-[9px] font-black text-indigo-400 uppercase tracking-widest">Pilih Gambar Header</span>
                             </>
                           )}
                           <input 
@@ -237,35 +237,35 @@ export const LinkManager = ({
                         </div>
 
                         <div className="space-y-1">
-                          <label className="block text-[9px] font-black text-indigo-400 uppercase tracking-widest ml-1">Main Heading</label>
+                          <label className="block text-[9px] font-black text-indigo-400 uppercase tracking-widest ml-1">Judul Utama</label>
                           <input
                             type="text"
                             value={newSlideTitle}
                             onChange={(e) => setNewSlideTitle(e.target.value)}
-                            placeholder="e.g., Focus Mode"
+                            placeholder="misal: Mode Fokus"
                             className="w-full px-5 py-3 bg-indigo-900/50 border border-white/10 rounded-2xl focus:border-pink-500/50 outline-none transition-all placeholder:text-indigo-400/30 text-white"
                           />
                         </div>
                         <div className="space-y-1">
-                          <label className="block text-[9px] font-black text-indigo-400 uppercase tracking-widest ml-1">Caption</label>
+                          <label className="block text-[9px] font-black text-indigo-400 uppercase tracking-widest ml-1">Keterangan</label>
                           <textarea
                             value={newSlideSubtitle}
                             onChange={(e) => setNewSlideSubtitle(e.target.value)}
-                            placeholder="What's this header about?"
+                            placeholder="Apa isi header ini?"
                             className="w-full px-5 py-3 bg-indigo-900/50 border border-white/10 rounded-2xl focus:border-pink-500/50 outline-none transition-all placeholder:text-indigo-400/30 text-white text-xs"
                             rows={3}
                           />
                         </div>
                       </div>
                       <button type="submit" className="w-full py-4 bg-pink-600 text-white rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-pink-500 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg shadow-pink-600/20">
-                        Deploy Slide
+                        Pasang Slide
                       </button>
                     </form>
                   </section>
 
                   <section>
                     <h3 className="text-[10px] font-black text-indigo-300 uppercase tracking-[0.2em] mb-6">
-                      Active Slides ({slides.length})
+                      Slide Aktif ({slides.length})
                     </h3>
                     <div className="space-y-4">
                       {slides.map((slide) => (
@@ -275,7 +275,7 @@ export const LinkManager = ({
                           </div>
                           <div className="flex-1 min-w-0">
                             <h4 className="font-black text-white uppercase text-[10px] tracking-widest truncate">{slide.title}</h4>
-                            <p className="text-[9px] text-indigo-400 uppercase font-black truncate opacity-60">System Slide</p>
+                            <p className="text-[9px] text-indigo-400 uppercase font-black truncate opacity-60">Slide Sistem</p>
                           </div>
                           <button 
                             onClick={() => onRemoveSlide(slide.id)}
@@ -293,12 +293,12 @@ export const LinkManager = ({
                 <>
                   <section>
                     <h3 className="text-[10px] font-black text-indigo-300 uppercase tracking-[0.2em] mb-6 flex items-center gap-3">
-                      <Palette size={14} className="text-pink-500" /> Background Workspace
+                      <Palette size={14} className="text-pink-500" /> Latar Belakang Ruang Kerja
                     </h3>
                     
                     <div className="bg-white/5 p-6 rounded-3xl border border-white/5 space-y-6">
                       <div className="space-y-4">
-                        <label className="block text-[9px] font-black text-indigo-400 uppercase tracking-widest ml-1">Preset Themes</label>
+                        <label className="block text-[9px] font-black text-indigo-400 uppercase tracking-widest ml-1">Tema Preset</label>
                         <div className="grid grid-cols-4 gap-3">
                           {PRESET_COLORS.map(color => (
                             <button
@@ -314,7 +314,7 @@ export const LinkManager = ({
                       </div>
 
                       <div className="space-y-3">
-                        <label className="block text-[9px] font-black text-indigo-400 uppercase tracking-widest ml-1">Custom Color</label>
+                        <label className="block text-[9px] font-black text-indigo-400 uppercase tracking-widest ml-1">Warna Kustom</label>
                         <div className="flex gap-4 items-center">
                           <input 
                             type="color" 

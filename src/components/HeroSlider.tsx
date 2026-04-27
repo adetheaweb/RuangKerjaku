@@ -52,7 +52,7 @@ export const HeroSlider = ({ slides }: HeroSliderProps) => {
                 animate={{ opacity: 1, x: 0 }}
                 className="inline-block bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-lg text-[10px] font-black uppercase mb-6 tracking-[0.3em] text-white border border-white/10"
               >
-                Featured Concept
+                Konsep Unggulan
               </motion.span>
               <motion.h1 
                 initial={{ y: 30, opacity: 0 }}

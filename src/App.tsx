@@ -7,11 +7,19 @@ import { useLinks } from './hooks/useLinks';
 import { useSlider } from './hooks/useSlider';
 import { useTheme } from './hooks/useTheme';
 
+import { useAuth } from './hooks/useAuth';
+import { LoginDialog } from './components/LoginDialog';
+
 export default function App() {
   const { links, addLink, removeLink } = useLinks();
   const { slides, addSlide, removeSlide } = useSlider();
   const { bgColor, setBgColor } = useTheme();
+  const { isAuthenticated, login } = useAuth();
   const [isManagerOpen, setIsManagerOpen] = useState(false);
+
+  if (!isAuthenticated) {
+    return <LoginDialog onLogin={login} />;
+  }
 
   return (
     <div style={{ backgroundColor: bgColor }} className="min-h-screen text-white flex flex-col font-sans selection:bg-pink-500 selection:text-white transition-colors duration-500">
@@ -37,7 +45,7 @@ export default function App() {
               className="bg-indigo-800/50 hover:bg-indigo-700 px-6 py-2.5 rounded-full border border-indigo-400/20 transition-all flex items-center gap-3 group"
             >
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse group-hover:scale-125 transition-transform" />
-              <span className="text-sm font-bold uppercase tracking-widest">My Link Menu</span>
+              <span className="text-sm font-bold uppercase tracking-widest">Menu Link Saya</span>
             </button>
             <div className="w-10 h-10 bg-indigo-400/20 rounded-full border-2 border-indigo-400/30 overflow-hidden flex items-center justify-center">
                <Settings size={20} className="text-indigo-200" />
@@ -58,17 +66,17 @@ export default function App() {
           <section className="py-20">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
               <div>
-                <h2 className="text-4xl font-black tracking-tight mb-2 uppercase italic">Quick Shortcuts</h2>
+                <h2 className="text-4xl font-black tracking-tight mb-2 uppercase italic">Pintasan Cepat</h2>
                 <button 
                   onClick={() => setIsManagerOpen(true)}
                   className="text-indigo-300 hover:text-pink-400 font-bold flex items-center gap-2 transition-colors uppercase tracking-widest text-xs"
                 >
-                  Edit Dashboard <span className="text-lg">&rarr;</span>
+                  Edit Dasbor <span className="text-lg">&rarr;</span>
                 </button>
               </div>
               <div className="h-px flex-1 bg-white/5 mx-8 hidden md:block" />
               <div className="flex items-center gap-2 text-xs font-black text-indigo-400 uppercase tracking-[0.2em] bg-indigo-900/50 px-4 py-2 rounded-full border border-white/5">
-                <span>{links.length} Active Modules</span>
+                <span>{links.length} Modul Aktif</span>
               </div>
             </div>
 
@@ -81,7 +89,7 @@ export default function App() {
                 <div className="w-14 h-14 rounded-full bg-indigo-800/50 group-hover:bg-pink-500 flex items-center justify-center text-3xl font-light mb-4 transition-all group-hover:text-white shadow-lg group-hover:shadow-pink-500/40">
                   <Plus size={28} />
                 </div>
-                <span className="text-sm font-black uppercase tracking-widest transition-colors group-hover:text-pink-400">Add New</span>
+                <span className="text-sm font-black uppercase tracking-widest transition-colors group-hover:text-pink-400">Tambah Baru</span>
               </button>
 
               {links.map((link, index) => (
@@ -95,11 +103,11 @@ export default function App() {
       {/* Footer */}
       <footer className="border-t border-white/5 bg-indigo-950/40 backdrop-blur-md py-12">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-indigo-400/60 text-sm font-bold uppercase tracking-widest leading-none">© 2026 RUANG KERJA ADETHEA. All rights reserved.</p>
+          <p className="text-indigo-400/60 text-sm font-bold uppercase tracking-widest leading-none">© 2026 RUANG KERJA ADETHEA. Hak cipta dilindungi undang-undang.</p>
           <div className="flex items-center gap-10 text-[10px] font-black text-indigo-100 uppercase tracking-[0.2em]">
-            <a href="#" className="hover:text-pink-400 transition-colors">Security</a>
-            <a href="#" className="hover:text-pink-400 transition-colors">Privacy</a>
-            <a href="#" className="hover:text-pink-400 transition-colors">Contact</a>
+            <a href="#" className="hover:text-pink-400 transition-colors">Keamanan</a>
+            <a href="#" className="hover:text-pink-400 transition-colors">Privasi</a>
+            <a href="#" className="hover:text-pink-400 transition-colors">Kontak</a>
           </div>
         </div>
       </footer>
