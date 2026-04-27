@@ -80,16 +80,16 @@ export default function App() {
               </div>
             </div>
 
-            <div id="links-grid" className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+            <div id="links-grid" className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-4">
               {/* Add More Shadow Button */}
               <button 
                 onClick={() => setIsManagerOpen(true)}
-                className="group flex flex-col items-center justify-center p-8 bg-indigo-900/30 border-2 border-dashed border-indigo-500/30 rounded-3xl hover:border-pink-500 hover:bg-pink-500/10 transition-all text-indigo-300"
+                className="group flex flex-col items-center justify-center p-5 bg-indigo-900/30 border-2 border-dashed border-indigo-500/30 rounded-[2rem] hover:border-pink-500 hover:bg-pink-500/10 transition-all text-indigo-300"
               >
-                <div className="w-14 h-14 rounded-full bg-indigo-800/50 group-hover:bg-pink-500 flex items-center justify-center text-3xl font-light mb-4 transition-all group-hover:text-white shadow-lg group-hover:shadow-pink-500/40">
-                  <Plus size={28} />
+                <div className="w-12 h-12 rounded-full bg-indigo-800/50 group-hover:bg-pink-500 flex items-center justify-center text-3xl font-light mb-3 transition-all group-hover:text-white shadow-lg group-hover:shadow-pink-500/40">
+                  <Plus size={24} />
                 </div>
-                <span className="text-sm font-black uppercase tracking-widest transition-colors group-hover:text-pink-400">Tambah Baru</span>
+                <span className="text-[10px] font-black uppercase tracking-widest transition-colors group-hover:text-pink-400">Tambah Baru</span>
               </button>
 
               {links.map((link, index) => (

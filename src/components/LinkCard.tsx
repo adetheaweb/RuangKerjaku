@@ -19,12 +19,12 @@ export const LinkCard = ({ link, index }: LinkCardProps) => {
       transition={{ delay: index * 0.05 }}
       whileHover={{ y: -8 }}
       whileTap={{ scale: 0.95 }}
-      className="group relative flex flex-col items-center justify-center p-8 bg-white/5 backdrop-blur-md border border-white/10 rounded-[2.5rem] hover:bg-white/15 transition-all duration-500 overflow-hidden text-center"
+      className="group relative flex flex-col items-center justify-center p-5 bg-white/5 backdrop-blur-md border border-white/10 rounded-[2rem] hover:bg-white/15 transition-all duration-500 overflow-hidden text-center"
     >
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-pink-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
       
-      <div className="relative w-16 h-16 flex items-center justify-center rounded-2xl bg-indigo-500/20 text-indigo-300 group-hover:bg-pink-500 group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(236,72,153,0.4)] transition-all duration-500 mb-5">
-        <LinkIcon name={link.iconName} size={30} strokeWidth={2} />
+      <div className="relative w-12 h-12 flex items-center justify-center rounded-2xl bg-indigo-500/20 text-indigo-300 group-hover:bg-pink-500 group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(236,72,153,0.4)] transition-all duration-500 mb-3">
+        <LinkIcon name={link.iconName} size={24} strokeWidth={2} />
       </div>
       
       <span className="relative font-black uppercase text-white tracking-widest text-xs group-hover:text-pink-400 transition-colors uppercase">{link.title}</span>
